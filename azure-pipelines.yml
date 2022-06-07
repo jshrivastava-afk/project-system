@@ -32,3 +32,12 @@ steps:
   inputs:
     platform: '$(buildPlatform)'
     configuration: '$(buildConfiguration)'
+
+- task: SonarQubePrepare@5
+  inputs:
+    SonarQube: 'sonarsec'
+    scannerMode: 'MSBuild'
+    projectKey: 'PartsUnlimited_PartsUnlimited'
+    projectName: 'PartsUnlimited'
+
+- task: SonarQubeAnalyze@5
